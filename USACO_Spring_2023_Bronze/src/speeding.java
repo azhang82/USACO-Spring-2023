@@ -55,7 +55,7 @@ public class speeding {
 	        }
 
 
-	        PrintWriter out = new PrintWriter(new File("speeding.out"));
+	        PrintWriter out = new PrintWriter(new File("src/speeding.out"));
 	        out.println(result);
 
 	        System.out.println(result);
