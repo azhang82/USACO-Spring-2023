@@ -1,7 +1,38 @@
-
+import java.util.*;
+import java.io.*;
 
 public class cbarn {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
+		Scanner in = new Scanner(new File("src/cbarn.in"));
+		int rooms = in.nextInt();
+		int[] counts = new int[rooms];
+		int numCows = 0;
+		for(int i = 0; i <= rooms-1; i++) {
+			counts[i] = in.nextInt();
+			numCows = numCows + counts[i];
+		}
+		in.close();
+		int farthestRoomDist = rooms-1;
+		
+		int minCollectiveSteps = farthestRoomDist*numCows;
+		
+		for(int unlock = 0; unlock < rooms; unlock++) {
+			// assume we unlock the door at index "unlock"
+			//compute the distance all cows travel
+			int currentDistance = 0;
+				for(int offset = 0; offset < rooms; offset++) {
+					// count how many cows have to walk a distance of "offset"
+					currentDistance += offset * counts[(unlock+offset)%rooms];
+				}
+				if(currentDistance < minCollectiveSteps) {
+					minCollectiveSteps = currentDistance;
+				}
+		}
+		
+		PrintWriter out = new PrintWriter(new File("cbarn.out"));
+		out.println(minCollectiveSteps);
+		System.out.println(minCollectiveSteps);
+		
 		// Given number of rooms and number of cows to end up each room
 		// Find min  number of steps the cows need to walk.
 		/* 
