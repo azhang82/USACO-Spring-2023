@@ -3,7 +3,7 @@ import java.io.*;
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=857
 public class backAndForth {
 		  public static void main(String[] args) throws Exception {
-			  	Scanner in = new Scanner(new File("backforth.in"));
+			  	Scanner in = new Scanner(new File("src/backforth.in"));
 			  	int[] bucksA = new int[10];
 			  	int[] bucksB = new int[11];
 			  	//stores carrying capacity of buckets in each barn 
