@@ -3,7 +3,7 @@ import java.io.*;
 
 public class cbarn {
 	public static void main(String args[]) throws Exception {
-		Scanner in = new Scanner(new File("src/cbarn.in"));
+		Scanner in = new Scanner(new File("cbarn.in"));
 		int rooms = in.nextInt();
 		int[] counts = new int[rooms];
 		int numCows = 0;
@@ -32,6 +32,7 @@ public class cbarn {
 		PrintWriter out = new PrintWriter(new File("cbarn.out"));
 		out.println(minCollectiveSteps);
 		System.out.println(minCollectiveSteps);
+		out.close();
 		
 		// Given number of rooms and number of cows to end up each room
 		// Find min  number of steps the cows need to walk.
